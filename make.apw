@@ -1,0 +1,26 @@
+*
+* NuLib AGE script (A pseudo-makefile for APW and ORCA)
+*
+
+for file in numain nuread nuview nuadd nuext nupdel nupak nuetc nublu nushk nusq nucomp
+    age obj/{file}.root {file}.c
+    if {age} != 0
+        echo compiling {file}.c
+        delete obj/{file}.root
+        compile {file}.c keep=obj/{file}
+    end
+end
+
+* Once everything is compiled, I test the final
+* program file against the object modules that build it.
+* If linking is required, it is performed next followed
+* by a series of other statements to complete it:
+
+age cshk obj/=.root
+purge
+if {age} != 0
+    delete nulib
+    prefix obj
+    assemble linker.scr
+    prefix ..
+end

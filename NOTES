@@ -1,0 +1,98 @@
+Programming notes (05-Nov-89) (updated 23-Aug-90)
+
+-----
+Name:
+What started out as a NuFX viewer turned into a full-blown archiver.  It went
+from NuView to NuARC, which was reasonable... until I spoke to Andy Nicholas.
+Apparently he'd been warned against using the name NuARC, so I had to pick
+a new one.  "CShrink" seemed the most rational, since it is coded entirely in
+C and is meant to complement ShrinkIt.  However, L&L now owns the name
+"ShrinkIt", so I switched over to NuLib.  My other choice was "NuPak", but
+that's now a completely different (but compatible) program.  Sigh.  A rose
+by any other name would be full of thorns.
+
+
+-----
+Excuses:
+The code is written to be portable first, efficient second.  If you see a
+way to retain portability across a *wide* range of machines (from a //gs
+to a Cray) but increase efficiency, please let me know.
+
+Because of the way this was developed (archive viewer -> simple extractor ->
+extractor with extra goodies, plus the NuFX standard kept changing while I
+was working), I haven't exactly followed top-down programming practices.
+It shows (wince).
+
+Some of the procedures are rather long.  Good progamming practice dictates
+that no procedure should be longer than your screen; my screen (a Sun 3/50
+running X10) has 62 lines at the moment.  This is certainly no excuse for
+procedures in excess of 150 lines, but I have tried to break things down into
+pieces within the procedures themselves.
+
+Some program-wide globals are used; most are boolean values or some special
+control variables that have to be visible across several files.  Probably
+the worst is "onebyt *pakbuf", which was used so that I didn't have to keep
+malloc()ing a 64K buffer every few calls.  It should be malloc()ed ONLY by
+routines called directly from main(), and should be free()d at the end of
+those procedures (which should cause execution to go back to main()).
+
+Another bad one is tmpNameBuf.  I was worried about having multiple 1K buffers
+filling static storage (or the stack), so I made this... it is intended to be
+*very* temporary; don't make any calls to other NuLib procedures and expect
+it to survive.
+
+This program is still under development...  But it's getting there.
+
+
+-----
+#ifdefs are generally structured as follows:
+
+#ifdef UNIX      /* all UNIX systems come first */
+# ifdef BSD43
+  ...
+# endif
+# ifdef SYSV
+  ...
+# endif
+
+#else            /* followed by micros, running GS/OS, MS-DOS, HFS, ... */
+
+# ifdef APW
+  ...
+# endif
+# ifdef MDOS
+  ...
+# endif
+# ifndef APW    /* if nothing else is defined... */
+# ifndef MSDOS  /* this is included so that somebody doing a port */
+  /* +PORT+ */
+  ...           /* can easily figure out what needs to be altered */
+# endif
+# endif
+
+#endif
+
+Things that need to be altered when porting between systems are tagged
+with "/* +PORT+ */"
+
+
+-----
+#includes should be in this order:
+
+#include "nudefs.h"
+#include <...>
+#include "..."
+
+In ALL cases, nudefs.h should come first.  Generally speaking it is a good
+idea to have the system includes before any NuLib ones.
+
+
+-----
+UNIX doesn't really have a create_time field; it has accessed, modified, and
+"changed".  Modified gets reset when the data gets modified; changed gets
+reset by chmod, chown, link, mknod, rename, unlink, utimes, write, and
+truncate.  Anyway, the "modified" field is set what it should be, but I'm
+going to let the "changed" and "accessed" fields take care of themselves
+(in other words, I don't intend to modify them... besides, you can't change
+the "changed" field anyway).
+

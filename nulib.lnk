@@ -1,0 +1,7 @@
+ nuadd.obj+nublu.obj+nuetc.obj+nuext.obj+numain.obj+nupak.obj+nupdel.obj+
+ nuread.obj+nushk.obj+nusq.obj+nuview.obj+nucomp.obj
+ NuLib
+ NuLib.Map
+ /STACK:10000 /NOI /EXE /FAR /PACKC
+ ;
+

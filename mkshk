@@ -1,0 +1,25 @@
+#!/usr/bin/env csh
+#
+# Make NuLib shk file for download.
+# Puts a copy of the files (without tabs and linefeeds) in ./trans, and then
+#   adds them to "nulib.shk"
+#
+# ("detab" converts tabs to spaces)
+#
+# This is intended as an example; it may or may not work on your system.
+
+
+echo "--- Converting tabs and linefeeds"
+foreach file (README Benchmarks Makefile make.apw linker.scr linked.scr \
+	mkshk *.h *.c nulib.mak nulib.lnk)
+    echo $file
+    detab $file | tr '\012' '\015' >! trans/$file
+end
+
+cd trans
+nulib cvftxt/0000 nulib.shk README Benchmarks Makefile nulib.mak nulib.lnk
+nulib avfsrc/0006 nulib.shk make.apw mkshk
+nulib avfsrc/0009 nulib.shk linked.scr
+nulib avfsrc/0109 nulib.shk linker.scr
+nulib avfsrc/000a nulib.shk *.h *.c
+cd ..

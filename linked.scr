@@ -1,0 +1,69 @@
+; APW LinkEd script file for NuLib
+;
+; Does not search for segments with blank load segment names.
+; Does not search files for DIRECT segments (only the CLIB).
+; Does not search any libraries other than 2/clib.
+
+keep ../nulib
+
+* This is the main code segment (type = code)
+segment/$00 main
+  loadselect 2/start.root   main
+  loadselect numain.root    main
+  loadselect nuread.root    main
+  loadselect nuetc.root     main
+  loadselect nuview.root    main
+  loadselect nuadd.root     main
+  loadselect nuext.root     main
+  loadselect nupdel.root    main
+  library/loadselect 2/clib main
+
+* This contains compression/Binary II code (type = dynamic)
+segment/dynamic Compress
+  loadselect nupak.root     main
+  loadselect nublu.root     main
+  loadselect nucomp.root    main
+  loadselect nushk.root     main
+  loadselect nusq.root      main
+  library/loadselect 2/clib main
+
+* This contains all global definitions (type = private data)
+segment/$41 Globals
+  loadselect 2/start.root   ~globals
+  loadselect numain.root    ~globals
+  loadselect nuread.root    ~globals
+  loadselect nuetc.root     ~globals
+  loadselect nuview.root    ~globals
+  loadselect nuadd.root     ~globals
+  loadselect nuext.root     ~globals
+  loadselect nupdel.root    ~globals
+  loadselect nupak.root     ~globals
+  loadselect nublu.root     ~globals
+  loadselect nucomp.root    ~globals
+  loadselect nushk.root     ~globals
+  loadselect nusq.root      ~globals
+  library/loadselect 2/clib ~globals
+
+* This holds all arrays (type = private data)
+segment/$41 Arrays
+  loadselect 2/start.root   ~arrays
+  loadselect numain.root    ~arrays
+  loadselect nuread.root    ~arrays
+  loadselect nuetc.root     ~arrays
+  loadselect nuview.root    ~arrays
+  loadselect nuadd.root     ~arrays
+  loadselect nuext.root     ~arrays
+  loadselect nupdel.root    ~arrays
+  loadselect nupak.root     ~arrays
+  loadselect nublu.root     ~arrays
+  loadselect nucomp.root    ~arrays
+  loadselect nushk.root     ~arrays
+  loadselect nusq.root      ~arrays
+  library/loadselect 2/clib ~arrays
+
+* This has direct page stuff, like the stack
+segment/$12 Direct (type = direct-page/stack)
+  library/loadselect 2/clib DIRECT
+
+list on
+* One other segment, SEGJPTBL, appears here...
