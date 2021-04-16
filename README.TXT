@@ -122,3 +122,5 @@ but has successfully extracted Binary ][ and NuLib archives.
 
  - Jeffrey H. Johnson
    <trnsz@pobox.com>
+
+Codacy Badge
