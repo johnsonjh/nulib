@@ -130,16 +130,17 @@ option.
 ### Porting Notes
 
 - Linux Port
-  * This was pretty easy. The only thing linux complained about was an
+
+  - This was pretty easy. The only thing linux complained about was an
     incompatibility in the rename() function so I commented it out of stdio.h and
     defined NO_RENAME in nudefs.h and added a linux def there.
-      - Mike Neuliep \<wires@gnu.ai.mit.edu\>
+    - Mike Neuliep \<wires@gnu.ai.mit.edu\>
 
 - Modern Linux Port
-  * Added somewhat recent \_G_config.h, commented a few lines, and changed
+  - Added somewhat recent \_G_config.h, commented a few lines, and changed
     Makefile to use -fcommon. More work is likely needed, but has successfully
     extracted Binary \]\[ and NuLib archives.
-  * Added somewhat recent \_G_config.h, commented a few lines, and changed Makefile to use -fcommon. More work is likely needed, but has successfully extracted Binary \]\[ and NuLib archives.
+  - Added somewhat recent \_G_config.h, commented a few lines, and changed Makefile to use -fcommon. More work is likely needed, but has successfully extracted Binary \]\[ and NuLib archives.
     - Jeffrey H. Johnson \<trnsz@pobox.com\>
 
 ### Original Author
