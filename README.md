@@ -1,4 +1,4 @@
-# NuLib v3.24
+# NuLib
 
 ## History
 
