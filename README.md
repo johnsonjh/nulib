@@ -133,7 +133,7 @@ option.
 
 * This was pretty easy. The only thing linux complained about was an
   incompatibility in the rename() function so I commented it out of stdio.h and
-  defined NO_RENAME in nudefs.h and added a linux def there.  
+  defined NO_RENAME in nudefs.h and added a linux def there.
    -Mike Neuliep wires@gnu.ai.mit.edu
 
 - Modern Linux Port
