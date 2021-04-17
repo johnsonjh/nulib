@@ -13,8 +13,8 @@
 
 ### NuLib v3.22 (September 1992)
 
-- Added "compress file as if it were a disk" code (provided by somebody whose
-  name I just lost). Seems to work, but it's not 100% tested.
+- Added "compress file as if it were a disk" code (provided by somebody
+  whose name I just lost). Seems to work, but it's not 100% tested.
 - Faster compression
 - Updated filetype abbreviations
 
@@ -24,9 +24,9 @@
 
 ### NuLib v3.2 (April 1992):
 
-- Lots of minor bug fixes. (I was getting lost in the version numbers so I just
-  upped it to 3.2). Of importance are the bug fixes to the LZW-II decoder and
-  EFT (Expanded Fundamental Types) awareness.
+- Lots of minor bug fixes. (I was getting lost in the version numbers so
+  I just upped it to 3.2). Of importance are the bug fixes to the LZW-II
+  decoder and EFT (Expanded Fundamental Types) awareness.
 
 ### NuLib v3.14 (November 1991)
 
@@ -113,38 +113,35 @@ option.
 
 ### Known Bugs
 
-- Under some systems, using UNIX compress on a file which does not compress will
-  cause the archive's EOF to be larger than it should be. This slack space will
-  be used up if you add more files to the archive (with NuLib anyway; no
-  guarantees about ShrinkIt or GS/ShrinkIt, but there's no reason why they
-  shouldn't work).
+- Under some systems, using UNIX compress on a file which does not compress
+  will cause the archive's EOF to be larger than it should be. This slack
+  space will be used up if you add more files to the archive (with NuLib
+  anyway; no guarantees about ShrinkIt or GS/ShrinkIt, but there's no reason
+  why they shouldn't work).
 
 - Just to make things clear: if the file being compressed doesn't get any
   smaller, the compression halts and the file is simply stored uncompressed.
-  Because of the way compress works, on some systems the space that would have
-  been occupied by more compressed data is left attached to the file. The
-  ShrinkIt compression does not suffer from this problem. If you add more stuff
-  to the file, NuLib will fill the slack space first, NOT just append to the end
-  of the file).
+  Because of the way compress works, on some systems the space that would
+  have been occupied by more compressed data is left attached to the file.
+  The ShrinkIt compression does not suffer from this problem. If you add
+  more stuff to the file, NuLib will fill the slack space first, NOT just
+  append to the end of the file).
 
 ### Porting Notes
 
 - Linux Port
-
-* This was pretty easy. The only thing linux complained about was an
-  incompatibility in the rename() function so I commented it out of stdio.h and
-  defined NO_RENAME in nudefs.h and added a linux def there.
-  -Mike Neuliep wires@gnu.ai.mit.edu
+  * This was pretty easy. The only thing linux complained about was an
+    incompatibility in the rename() function so I commented it out of stdio.h and
+    defined NO_RENAME in nudefs.h and added a linux def there.
+      - Mike Neuliep \<wires@gnu.ai.mit.edu\>
 
 - Modern Linux Port
-
-* Added somewhat recent \_G_config.h, commented a few lines, and changed
-  Makefile to use -fcommon. More work is likely needed, but has successfully
-  extracted Binary \]\[ and NuLib archives.
-
-                                       - Jeffrey H. Johnson
-                                         \<trnsz@pobox.com\>
+  * Added somewhat recent \_G_config.h, commented a few lines, and changed
+    Makefile to use -fcommon. More work is likely needed, but has successfully
+    extracted Binary \]\[ and NuLib archives.
+  * Added somewhat recent \_G_config.h, commented a few lines, and changed Makefile to use -fcommon. More work is likely needed, but has successfully extracted Binary \]\[ and NuLib archives.
+    - Jeffrey H. Johnson \<trnsz@pobox.com\>
 
 ### Original Author
 
-- I can be reached at fadden@uts.amdahl.com
+- \<fadden@uts.amdahl.com\>
