@@ -10,9 +10,16 @@
  */
 
 /* SYSTEM DEPENDENCIES */
+#include <bits/types.h>
+#if __WORDSIZE == 64
+typedef unsigned char onebyt;
+typedef unsigned short int twobyt;
+typedef unsigned int fourbyt;
+#else
 typedef unsigned char onebyt;
 typedef unsigned short twobyt;
 typedef unsigned long fourbyt;
+#endif
 
 /* byte ordering; TRUE if high byte is first (68xxx), else FALSE (65xxx) */
 extern int HiLo;  /* actually part of numain.c */
