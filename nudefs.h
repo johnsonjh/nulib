@@ -196,6 +196,6 @@ extern int diskData;	/* BOOLEAN: store files as disk images */
 extern fourbyt defFileType;	/* default file type */
 extern fourbyt defAuxType;	/* default aux type */
 extern onebyt *pakbuf;	/* used by compression routines; created once to */
-              /* eliminate overhead involved in malloc()ing a 64K buffer */
+/* eliminate overhead involved in malloc()ing a 64K buffer */
 extern char *prgName;	/* for errors; don't like argv[0] */
 
