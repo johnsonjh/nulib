@@ -140,9 +140,6 @@ option.
   - Added somewhat recent \_G_config.h, commented a few lines, and changed
     Makefile to use -fcommon. More work is likely needed, but has successfully
     extracted Binary \]\[ and NuLib archives.
-  - Added somewhat recent \_G_config.h, commented a few lines, and changed
-    Makefile to use -fcommon. More work is likely needed, but has successfully
-    extracted Binary \]\[ and NuLib archives.
     - Jeffrey H. Johnson \<trnsz@pobox.com\>
 
 ### Original Author
