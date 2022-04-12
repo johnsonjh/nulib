@@ -40,7 +40,7 @@ as [**NuLib2**](https://github.com/fadden/nulib2).
   **long** as the changes **do** **not** negatively impact support for **CP/M-68K**
   or **Xenix**.
 
-### Audience
+## Audience
 
 - In short, **NuLib2** should be preferred by most users.
 
