@@ -1,5 +1,55 @@
 # NuLib
 
+**_NuLib_**: A NuFile eXchange (**NuFX**) Archive Utility
+(_also supporting_ **_ShrinkIt_**/**_BinaryII_**)
+
+## Overview
+
+### NuLib2
+
+The original author of NuLib has continued developed with
+[NuLib2](https://github.com/fadden/nulib2).
+
+- **NuLib2** (_at least out of the box_), doesn't attempt to support
+  building on **MS-DOS**, **GS/OS**, or _most_ other 16-bit platforms
+  that were contemporary with the _Apple IIe_.
+
+- This version of NuLib is known to be working on **CP/M-68000\*,
+  **Xenix**[**23**]**86\**, modern (*and ancient*) resource constrained
+  embedded systems, *as well as\* modern Linux running on 64-bit processors.
+
+  - While it _may_ be possible to build **NuLib2** for these older systems,
+    these changes would, with high probably, not be able to be regularly or
+    easily tested and maintained in future **NuLib2** releases.
+
+#### NuLib v3.25
+
+- To further complicate matters, there was an upstream **NuLib** **_v3.25_**,
+  which fixed many of the same bugs as this release, which I was not aware of
+  at the time of producing this fork.
+- Most of the work on that version was done by contributor _Devin Reade_,
+  with a focus on improving compatibility with older systems and compilers,
+  namely, **Orca/C** and **GNO** running on the _Apple IIgs_.
+
+  - It is believed that version **3.25** should work least as well as v3.24
+    on these systems, however, it's been a very long time since they have been
+    tested and supported by the upstream author.
+
+- I _do_ plan to incorporate any applicable changes from that release, **as**
+  **long** as the changes **do** **not** negatively impact support for **CP/M-68K**
+  or **Xenix**.
+
+### Audience
+
+- In short, **NuLib2** should be preferred by most users.
+
+- If you need to have **NuLib** working on the _Apple IIGS_, the upstream
+  v3.25 is likely the best option and _probably_ works as well as v3.24.
+- If you need **NuLib** on a modern (but resource constrained) 64-bit or
+  32-bit embedded system, **CP/M-6800**, **Xenix/286**, or **Xenix/386**,
+  this version is known to have worked somewhat recently, and intends to
+  keep supporting these legacy platforms.
+
 ## History
 
 ### NuLib v3.24 (January 1993)
