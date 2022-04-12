@@ -14,9 +14,9 @@ The original author of NuLib has continued developed with
   building on **MS-DOS**, **GS/OS**, or _most_ other 16-bit platforms
   that were contemporary with the _Apple IIe_.
 
-- This version of NuLib is known to be working on **CP/M-68000\*,
-  **Xenix**[**23**]**86\**, modern (*and ancient*) resource constrained
-  embedded systems, *as well as\* modern Linux running on 64-bit processors.
+- This version of NuLib is known to be working on **CP/M-68000**,
+  **Xenix**[**23**]**86**, modern (*and ancient*) resource constrained
+  embedded systems, *as well as* modern Linux running on 64-bit processors.
 
   - While it _may_ be possible to build **NuLib2** for these older systems,
     these changes would, with high probably, not be able to be regularly or
@@ -27,11 +27,12 @@ The original author of NuLib has continued developed with
 - To further complicate matters, there was an upstream **NuLib** **_v3.25_**,
   which fixed many of the same bugs as this release, which I was not aware of
   at the time of producing this fork.
+
 - Most of the work on that version was done by contributor _Devin Reade_,
   with a focus on improving compatibility with older systems and compilers,
   namely, **Orca/C** and **GNO** running on the _Apple IIgs_.
 
-  - It is believed that version **3.25** should work least as well as v3.24
+  - It is believed that upstream **v3.25** should work least as well as v3.24
     on these systems, however, it's been a very long time since they have been
     tested and supported by the upstream author.
 
