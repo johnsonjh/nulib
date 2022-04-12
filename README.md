@@ -7,14 +7,14 @@
 
 ### NuLib2
 
-The original author of NuLib has continued developed with
-[NuLib2](https://github.com/fadden/nulib2).
+The original author of **NuLib** has continued development of **NuLib**
+as [**NuLib2**](https://github.com/fadden/nulib2).
 
 - **NuLib2** (_at least out of the box_), doesn't attempt to support
   building on **MS-DOS**, **GS/OS**, or _most_ other 16-bit platforms
   that were contemporary with the _Apple IIe_.
 
-- This version of NuLib is known to be working on **CP/M-68000**,
+- This version of **NuLib** is known to be working on **CP/M-68000**,
   **Xenix**[**23**]**86**, modern (*and ancient*) resource constrained
   embedded systems, *as well as* modern Linux running on 64-bit processors.
 
