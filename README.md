@@ -19,7 +19,7 @@ as [**NuLib2**](https://github.com/fadden/nulib2).
   embedded systems, *as well as* modern Linux running on 64-bit processors.
 
   - While it _may_ be possible to build **NuLib2** for these older systems,
-    these changes would, with high probably, not be able to be regularly or
+    these changes would, with high probability, not be able to be regularly or
     easily tested and maintained in future **NuLib2** releases.
 
 #### NuLib v3.25
@@ -47,7 +47,7 @@ as [**NuLib2**](https://github.com/fadden/nulib2).
 - If you need to have **NuLib** working on the _Apple IIGS_, the upstream
   v3.25 is likely the best option and _probably_ works as well as v3.24.
 - If you need **NuLib** on a modern (but resource constrained) 64-bit or
-  32-bit embedded system, **CP/M-6800**, **Xenix/286**, or **Xenix/386**,
+  32-bit embedded system, **CP/M-68000**, **Xenix/286**, or **Xenix/386**,
   this version is known to have worked somewhat recently, and intends to
   keep supporting these legacy platforms.
 
